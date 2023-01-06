@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:DemoProject"
+             x:Class="DemoProject.MainPage">
+    <ContentPage.Resources>
+        <local:ColorToOnColorConverter x:Key = "ColorToOnColorConverter" />
+        <Style TargetType="Label">
+            <Setter Property = "TextColor"
+              Value="{Binding Source={RelativeSource Mode=Self},Path=TextColor,Converter={StaticResource Key=ColorToOnColorConverter}}" />
+        </Style>
+    </ContentPage.Resources>
+    <VerticalStackLayout WidthRequest="300">
+
+        <Label
+                x:Name="label"
+                Text="Hello, World!"
+                HorizontalTextAlignment="End"
+                 />
+
+    </VerticalStackLayout>
+
+</ContentPage>
